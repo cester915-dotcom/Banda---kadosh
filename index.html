@@ -1,1 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banda Kadosh</title>
+    <style>
+        /* --- ESTILOS GERAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background-color: #0b0c10;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /* --- 1º BLOCO: BANNER PRINCIPAL (TOPO) --- */
+        .banner-principal {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('SUA_IMAGEM_DE_FUNDO.jpg') no-repeat center center/cover;
+            padding: 20px;
+        }
+
+        .banner-principal h1 {
+            font-size: 3.5rem;
+            color: #ff6b00; /* Cor laranja igual ao seu print */
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .banner-principal p {
+            font-size: 1.2rem;
+            color: #c5a059; /* Tom dourado sutil */
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        /* Botão Laranja */
+        .btn-chamar {
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-chamar:hover {
+            background-color: #e05e00;
+            transform: scale(1.05);
+        }
+
+        /* --- 2º BLOCO: SERVIÇOS E VÍDEOS (EMBAIXO) --- */
+        .secao-servicos {
+            padding: 60px 20px;
+            background-color: #12141c;
+            /* Efeito de transição para aparecer suavemente */
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.6s ease, max-height 0.8s ease, padding 0.6s ease;
+        }
+
+        /* Classe que o JavaScript vai ativar para mostrar o bloco */
+        .secao-servicos.mostrar {
+            opacity: 1;
+            max-height: 2000px; /* Espaço suficiente para os cards e vídeos */
+            padding: 60px 20px;
+        }
+
+        .secao-servicos h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo-servicos {
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        /* Container dos 3 Cards Pretos */
+        .container-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #1f2229;
+            border: 1px solid #2f3442;
+            border-radius: 8px;
+            padding: 30px 20px;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b00;
+        }
+
+        .card h3 {
+            color: #ff6b00;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= BANNER PRINCIPAL ================= -->
+    <section class="banner-principal">
+        <h1>BANDA KADOSH</h1>
+        <p>Um ministério chamado para adorar, levando a louvor e a presença de Deus através da música.</p>
+        
+        <!-- O botão que ativa a função de mostrar os vídeos abaixo -->
+        <button class="btn-chamar" onclick="revelarConteudo()">Chamar Banda</button>
+    </section>
+
+
+    <!-- ================= SEÇÃO DE SERVIÇOS E VÍDEOS ================= -->
+    <!-- Ela começa escondida por padrão e ganha a classe 'mostrar' via JS -->
+    <section id="conteudo-banda" class="secao-servicos">
+        <h2>Banda Kadosh</h2>
+        <p class="subtitulo-servicos">Louvor, adoração e serviço a Deus através da música.</p>
+
+        <div class="container-cards">
+            <!-- Card 1 -->
+            <div class="card">
+                <h3>Louvor e Adoração</h3>
+                <p>Ministração de louvor e adoração durante os cultos e celebrações da igreja.</p>
+                <!-- Espaço para colocar o código do vídeo 1 aqui depois -->
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <h3>A Ministração</h3>
+                <p>Momentos especiais de ministração através das canções e da palavra.</p>
+                <!-- Espaço para colocar o código do vídeo 2 aqui depois -->
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <h3>Cultos e Eventos</h3>
+                <p>Participação em cultos, congressos e eventos especiais interdenominacionais.</p>
+                <!-- Espaço para colocar o código do vídeo 3 aqui depois -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= MÁGICA EM JAVASCRIPT ================= -->
+    <script>
+        function revelarConteudo() {
+            // Pega o bloco de baixo pelo ID
+            var secao = document.getElementById("conteudo-banda");
+            
+            // Adiciona ou remove a classe 'mostrar' a cada clique
+            secao.classList.toggle("mostrar");
+            
+            // Se o bloco foi aberto, rola a página suavemente até ele
+            if (secao.classList.contains("mostrar")) {
+                setTimeout(function() {
+                    secao.scrollIntoView({ behavior: 'smooth' });
+                }, 200); // Pequeno atraso para a animação do CSS começar primeiro
+            }
+        }
+    </script>
+
+</body>
+</html>
