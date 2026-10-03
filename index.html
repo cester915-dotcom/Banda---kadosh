@@ -3,189 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banda Kadosh</title>
+    <title>Banda Kadosh | Oficial</title>
+    <!-- Tailwind CSS para um design moderno e rápido -->
+    <script src="https://tailwindcss.com"></script>
+    <!-- Ícones do FontAwesome -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        /* --- ESTILOS GERAIS --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #0b0c10;
-            color: #ffffff;
-            text-align: center;
-        }
-
-        /* --- 1º BLOCO: BANNER PRINCIPAL (TOPO) --- */
-        .banner-principal {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('SUA_IMAGEM_DE_FUNDO.jpg') no-repeat center center/cover;
-            padding: 20px;
-        }
-
-        .banner-principal h1 {
-            font-size: 3.5rem;
-            color: #ff6b00; /* Cor laranja igual ao seu print */
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .banner-principal p {
-            font-size: 1.2rem;
-            color: #c5a059; /* Tom dourado sutil */
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        /* Botão Laranja */
-        .btn-chamar {
-            background-color: #ff6b00;
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.2s;
-        }
-
-        .btn-chamar:hover {
-            background-color: #e05e00;
-            transform: scale(1.05);
-        }
-
-        /* --- 2º BLOCO: SERVIÇOS E VÍDEOS (EMBAIXO) --- */
-        .secao-servicos {
-            padding: 60px 20px;
-            background-color: #12141c;
-            /* Efeito de transição para aparecer suavemente */
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: opacity 0.6s ease, max-height 0.8s ease, padding 0.6s ease;
-        }
-
-        /* Classe que o JavaScript vai ativar para mostrar o bloco */
-        .secao-servicos.mostrar {
-            opacity: 1;
-            max-height: 2000px; /* Espaço suficiente para os cards e vídeos */
-            padding: 60px 20px;
-        }
-
-        .secao-servicos h2 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-
-        .subtitulo-servicos {
-            color: #aaa;
-            margin-bottom: 40px;
-        }
-
-        /* Container dos 3 Cards Pretos */
-        .container-cards {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background-color: #1f2229;
-            border: 1px solid #2f3442;
-            border-radius: 8px;
-            padding: 30px 20px;
-            width: 300px;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #ff6b00;
-        }
-
-        .card h3 {
-            color: #ff6b00;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .card p {
-            color: #ccc;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body>
+<body class="bg-gray-900 text-gray-100 font-sans">
 
-    <!-- ================= BANNER PRINCIPAL ================= -->
-    <section class="banner-principal">
-        <h1>BANDA KADOSH</h1>
-        <p>Um ministério chamado para adorar, levando a louvor e a presença de Deus através da música.</p>
-        
-        <!-- O botão que ativa a função de mostrar os vídeos abaixo -->
-        <button class="btn-chamar" onclick="revelarConteudo()">Chamar Banda</button>
-    </section>
+    <!-- 🏠 INÍCIO / NAV -->
+    <header class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#inicio" class="text-2xl font-bold tracking-wider text-amber-500">BANDA KADOSH</a>
+            
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#quem-somos" class="hover:text-amber-500 transition">Quem Somos</a>
+                <a href="#proposito" class="hover:text-amber-500 transition">Propósito</a>
+                <a href="#fotos" class="hover:text-amber-500 transition">Fotos</a>
+                <a href="#musicas" class="hover:text-amber-500 transition">Músicas</a>
+                <a href="#agenda" class="hover:text-amber-500 transition">Agenda</a>
+                <a href="#convite" class="hover:text-amber-500 transition">Convide</a>
+            </nav>
 
+            <a href="https://wa.me" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-medium text-sm flex items-center gap-2 transition shadow-lg shadow-green-900/20">
+                <i class="fab fa-whatsapp text-lg"></i> Chamar no WhatsApp
+            </a>
+        </div>
+    </header>
 
-    <!-- ================= SEÇÃO DE SERVIÇOS E VÍDEOS ================= -->
-    <!-- Ela começa escondida por padrão e ganha a classe 'mostrar' via JS -->
-    <section id="conteudo-banda" class="secao-servicos">
-        <h2>Banda Kadosh</h2>
-        <p class="subtitulo-servicos">Louvor, adoração e serviço a Deus através da música.</p>
-
-        <div class="container-cards">
-            <!-- Card 1 -->
-            <div class="card">
-                <h3>Louvor e Adoração</h3>
-                <p>Ministração de louvor e adoração durante os cultos e celebrações da igreja.</p>
-                <!-- Espaço para colocar o código do vídeo 1 aqui depois -->
-            </div>
-
-            <!-- Card 2 -->
-            <div class="card">
-                <h3>A Ministração</h3>
-                <p>Momentos especiais de ministração através das canções e da palavra.</p>
-                <!-- Espaço para colocar o código do vídeo 2 aqui depois -->
-            </div>
-
-            <!-- Card 3 -->
-            <div class="card">
-                <h3>Cultos e Eventos</h3>
-                <p>Participação em cultos, congressos e eventos especiais interdenominacionais.</p>
-                <!-- Espaço para colocar o código do vídeo 3 aqui depois -->
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative h-[80vh] flex items-center justify-center bg-gradient-to-b from-gray-950 to-gray-900 overflow-hidden px-4 text-center">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://unsplash.com')] bg-cover bg-center mix-blend-overlay"></div>
+        <div class="relative max-w-3xl z-10">
+            <span class="text-amber-500 font-semibold tracking-widest uppercase text-sm">Ministério de Louvor & Adoração</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mt-2 mb-6 tracking-tight">Banda Kadosh</h1>
+            <p class="text-xl text-gray-400 mb-8 max-w-xl mx-auto">Levando a palavra através do louvor e da adoração com excelência.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#convite" class="bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold px-6 py-3 rounded-lg transition">Agenda & Convites</a>
+                <a href="#musicas" class="border border-gray-700 hover:bg-gray-800 px-6 py-3 rounded-lg transition">Ouvir Músicas</a>
             </div>
         </div>
     </section>
 
-    <!-- ================= MÁGICA EM JAVASCRIPT ================= -->
-    <script>
-        function revelarConteudo() {
-            // Pega o bloco de baixo pelo ID
-            var secao = document.getElementById("conteudo-banda");
-            
-            // Adiciona ou remove a classe 'mostrar' a cada clique
-            secao.classList.toggle("mostrar");
-            
-            // Se o bloco foi aberto, rola a página suavemente até ele
-            if (secao.classList.contains("mostrar")) {
-                setTimeout(function() {
-                    secao.scrollIntoView({ behavior: 'smooth' });
-                }, 200); // Pequeno atraso para a animação do CSS começar primeiro
-            }
-        }
-    </script>
+    <!-- 🙏 QUEM SOMOS -->
+    <section id="quem-somos" class="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-800">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-amber-500 font-semibold uppercase text-xs tracking-wider">Nossa História</span>
+                <h2 class="text-3xl font-bold mt-2 mb-6">Quem Somos</h2>
+                <p class="text-gray-400 leading-relaxed mb-4">Insira aqui um breve texto contando sobre o surgimento da Banda Kadosh, os integrantes originais e a caminhada cristã/musical de vocês até aqui.</p>
+                <p class="text-gray-400 leading-relaxed">Cada nota tocada e cada palavra cantada é fruto de um chamado dedicado ao serviço e edificação da igreja.</p>
+            </div>
+            <div class="bg-gray-800 h-64 rounded-2xl overflow-hidden shadow-xl border border-gray-700 flex items-center justify-center text-gray-500">
+                <i class="fas fa-users text-5xl"></i> <!-- Substitua pela imagem da banda -->
+            </div>
+        </div>
+    </section>
 
-</body>
-</html>
+    <!-- 🔥 NOSSO PROPÓSITO -->
+    <section id="proposito" class="py-20 bg-gray-950 border-t border-gray-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-amber-500 font-semibold uppercase text-xs tracking-wider">Missão e Visão</span>
+            <h2 class="text-3xl font-bold mt-2 mb-12">Nosso Propósito</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-900 rounded-xl border border-gray-800">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center text-amber-500 text-xl mx-auto mb-4"><i class="fas fa-cross"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Adoração</h3>
+                    <p class="text-gray-400 text-sm">Exaltar o nome do Senhor acima de todas as coisas através da nossa arte.</p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-xl border border-gray-800">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center text-amber-500 text-xl mx-auto mb-4"><i class="fas fa-heart"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Evangelismo</h3>
+                    <p class="text-gray-400 text-sm">Alcançar corações afastados e apresentar a mensagem da salvação.</p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-xl border border-gray-800">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center text-amber-500 text-xl mx-auto mb-4"><i class="fas fa-church"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Comunhão</h3>
+                    <p class="text-gray-400 text-sm">Servir de ferramenta para o mover do Espírito Santo dentro da igreja local.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📸 FOTOS -->
+    <section id="fotos" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-800">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Galeria de Fotos</h2>
+            <p class="text-gray-400 mt-2">Registros de ministrações, bastidores e eventos.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Espaços reservados para imagens. Substitua o 'src' pelos links das fotos reais depois -->
+            <div class="aspect-square bg-gray-800 rounded-lg border border-gray-700 flex items-center justify-center text-gray-600"><i class="far fa-image text-3xl"></i></div>
+            <div class="aspect-square bg-gray-800 rounded-lg border border-gray-700 flex items-center justify-center text-gray-600"><i class="far fa-image text-3xl"></i></div>
+            <div class="aspect-square bg-gray-800 rounded-lg border border-gray-700 flex items-center justify-center text-gray-600"><i class="far fa-image text-3xl"></i></div>
+            <div class="aspect-square bg-gray-800 rounded-lg border border-gray-700 flex items-center justify-center text-gray-600"><i class="far fa-image text-3xl"></i></div>
+        </div>
+    </section>
+
+    <!-- 🎵 MÚSICAS -->
+    <section id="musicas" class="py-20 bg-gray-950 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Nossas Músicas</h2>
+                <p class="text-gray-400 mt-2">Ouça nossos louvores e prepare o seu coração.</p>
+            </div>
+            <!-- Lista de reprodução simulada (Você pode colocar links do Spotify / YouTube aqui) -->
+            <div class="space-y-3">
+                <div class="bg-gray-900 p-4 rounded-xl border border-gray-800 flex items-center justify-between hover:border-amber-500/30 transition group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-gray-800 rounded flex items-center justify-center group-hover:text-amber-500"><i class="fas fa-play"></i></div>
+                        <div>
+                            <h4 class="font-medium">Nome da Música 1</h4>
+                            <p class="text-xs text-gray-500">Single / Álbum</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 text-gray-400">
+                        <a href="#" class="hover:text-white"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📅 AGENDA -->
+    <section id="agenda" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-800">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">Agenda de Eventos</h2>
+            <p class="text-gray-400 mt-2">Acompanhe onde estaremos ministrando nos próximos dias.</p>
+        </div>
+        <div class="bg-gray-900 rounded-2xl border border-gray-800 divide-y divide-gray-800 overflow-hidden">
+            <div class="p-6 flex flex-wrap justify-between items-center gap-4">
+                <div class="flex items-center gap-6">
+                    <div class="text-center bg-gray-800 p-3 rounded-xl min-w-16 border border-gray-700">
+                        <span class="block text-2xl font-bold text-amber-500">25</span>
+                        <span class="text-xs uppercase text-gray-400 font-medium">Dez</span>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-lg">Culto de Celebração de Natal</h4>
+                        <p class="text-gray-400 text-sm"><i class="fas fa-map-marker-alt text-amber-500 mr-2"></i>Igreja Local - São Paulo/SP</p>
