@@ -3,300 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banda Kadosh</title>
 
-    <title>Banda Kadosh | Sede Santo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: white;
+            line-height: 1.6;
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            background:
+                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85)),
+                radial-gradient(circle at center, #7b0000, #0b0b0b 65%);
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            letter-spacing: 8px;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: #b00000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 70px 20px;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            color: #d4af37;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #171717;
+            padding: 30px;
+            border-radius: 12px;
+            width: 280px;
+            border: 1px solid #333;
+        }
+
+        .card h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .agenda {
+            background: #151515;
+            border-radius: 15px;
+            padding: 40px 20px;
+        }
+
+        .whatsapp {
+            background: #168c3a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #050505;
+            color: #aaa;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- MENU -->
-    <header class="header">
-        <a href="#inicio" class="logo">KADOSH<span>.</span></a>
-
-        <nav class="nav">
-            <a href="#inicio">Início</a>
-            <a href="#sobre">Quem Somos</a>
-            <a href="#proposito">Propósito</a>
-            <a href="#fotos">Fotos</a>
-            <a href="#musicas">Músicas</a>
-            <a href="#agenda">Agenda</a>
-            <a href="#convite">Convide</a>
-        </nav>
-
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
-    </header>
-
-
-    <!-- HERO -->
-    <section id="inicio" class="hero">
-
-        <div class="hero-content">
-
-            <p class="small-title">BANDA KADOSH</p>
-
-            <h1>
-                MAIS QUE UMA BANDA.
-                <span>UMA ADORAÇÃO.</span>
-            </h1>
-
-            <p class="hero-text">
-                Levando uma mensagem de fé, esperança e adoração
-                através da música.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#musicas" class="btn primary">OUÇA NOSSAS MÚSICAS</a>
-                <a href="#convite" class="btn secondary">CONVIDE A KADOSH</a>
-            </div>
-
-        </div>
-
-        <div class="hero-glow"></div>
-
-        <div class="scroll">
-            ↓ ROLE PARA CONHECER
-        </div>
-
-    </section>
-
-
-    <!-- QUEM SOMOS -->
-    <section id="sobre" class="section">
-
-        <div class="section-title">
-            <p>QUEM SOMOS</p>
-            <h2>BANDA <span>KADOSH</span></h2>
-        </div>
-
-        <div class="about">
-
-            <div class="about-image">
-                <div class="image-placeholder">
-                    🎸
-                    <small>ADICIONE UMA FOTO DA BANDA</small>
-                </div>
-            </div>
-
-            <div class="about-text">
-
-                <h3>Uma geração apaixonada por Deus.</h3>
-
-                <p>
-                    A Banda Kadosh nasceu com o propósito de usar a música
-                    como instrumento de adoração, levando pessoas a
-                    se aproximarem de Deus.
-                </p>
-
-                <p>
-                    Cada louvor, cada acorde e cada palavra carregam
-                    uma mensagem: Deus continua transformando vidas.
-                </p>
-
-                <div class="quote">
-                    “Sede santos, porque eu sou santo.”
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROPÓSITO -->
-    <section id="proposito" class="purpose">
-
-        <div class="section-title">
-            <p>NOSSO PROPÓSITO</p>
-            <h2>VIVER PARA <span>ADORAR</span></h2>
-        </div>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="icon">🔥</div>
-                <h3>Adoração</h3>
-                <p>
-                    Adorar a Deus acima de tudo e conduzir pessoas
-                    a uma verdadeira experiência com Ele.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">✝️</div>
-                <h3>Evangelho</h3>
-                <p>
-                    Anunciar a mensagem de Cristo através da música
-                    e alcançar vidas.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">❤️</div>
-                <h3>Serviço</h3>
-                <p>
-                    Servir à igreja com excelência, humildade,
-                    amor e dedicação.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOTOS -->
-    <section id="fotos" class="section">
-
-        <div class="section-title">
-            <p>MOMENTOS</p>
-            <h2>NOSSAS <span>FOTOS</span></h2>
-        </div>
-
-        <div class="gallery">
-
-            <div class="photo">FOTO 01</div>
-            <div class="photo">FOTO 02</div>
-            <div class="photo">FOTO 03</div>
-            <div class="photo">FOTO 04</div>
-            <div class="photo">FOTO 05</div>
-            <div class="photo">FOTO 06</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- MÚSICAS -->
-    <section id="musicas" class="music">
-
-        <div class="section-title">
-            <p>LOUVOR & ADORAÇÃO</p>
-            <h2>NOSSAS <span>MÚSICAS</span></h2>
-        </div>
-
-        <div class="music-list">
-
-            <div class="music-item">
-                <div class="music-number">01</div>
-                <div>
-                    <h3>Nome da Música</h3>
-                    <p>Banda Kadosh</p>
-                </div>
-                <a href="#" class="play">▶</a>
-            </div>
-
-            <div class="music-item">
-                <div class="music-number">02</div>
-                <div>
-                    <h3>Nome da Música</h3>
-                    <p>Banda Kadosh</p>
-                </div>
-                <a href="#" class="play">▶</a>
-            </div>
-
-            <div class="music-item">
-                <div class="music-number">03</div>
-                <div>
-                    <h3>Nome da Música</h3>
-                    <p>Banda Kadosh</p>
-                </div>
-                <a href="#" class="play">▶</a>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- AGENDA -->
-    <section id="agenda" class="section">
-
-        <div class="section-title">
-            <p>FIQUE POR DENTRO</p>
-            <h2>NOSSA <span>AGENDA</span></h2>
-        </div>
-
-        <div class="event">
-
-            <div class="date">
-                <strong>00</strong>
-                <span>MÊS</span>
-            </div>
-
-            <div class="event-info">
-                <h3>Congresso de Mocidade</h3>
-                <p>📍 Local do evento</p>
-                <p>🕐 Horário</p>
-            </div>
-
-            <a href="#convite" class="event-btn">DETALHES</a>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONVITE -->
-    <section id="convite" class="invite">
-
-        <div class="invite-content">
-
-            <p>QUER A KADOSH NO SEU EVENTO?</p>
-
-            <h2>
-                VAMOS ADORAR
-                <span>JUNTOS.</span>
-            </h2>
-
-            <p class="invite-text">
-                Convide a Banda Kadosh para cultos, congressos,
-                eventos e momentos especiais.
-            </p>
-
-            <a
-                href="https://wa.me/5511924243911?text=Olá%20Banda%20Kadosh!%20Gostaria%20de%20convidar%20a%20banda%20para%20um%20evento."
-                target="_blank"
-                class="whatsapp">
-                🟢 CHAMAR NO WHATSAPP
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- RODAPÉ -->
-    <footer>
-
-        <div class="footer-logo">
-            KADOSH<span>.</span>
-        </div>
+<header>
+    <div class="hero">
+        <h1>BANDA KADOSH</h1>
 
         <p>
-            “Sede santos, porque eu sou santo.”
+            Separados para adorar. Chamados para servir.
         </p>
 
-        <div class="social">
-            <a href="#">Instagram</a>
-            <a href="#">YouTube</a>
-            <a href="#">WhatsApp</a>
+        <a href="#sobre" class="botao">CONHEÇA A KADOSH</a>
+    </div>
+</header>
+
+<section id="sobre">
+    <h2>QUEM SOMOS</h2>
+
+    <p>
+        A Banda Kadosh nasceu com o propósito de levar a presença de Deus
+        através da música, usando cada voz e cada instrumento para adorar
+        e alcançar vidas.
+    </p>
+</section>
+
+<section>
+    <h2>NOSSO PROPÓSITO</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🎤 ADORAÇÃO</h3>
+            <p>
+                Adorar a Deus com todo o nosso coração.
+            </p>
         </div>
 
-        <div class="copyright">
-            © 2026 Banda Kadosh — Todos os direitos reservados.
+        <div class="card">
+            <h3>🔥 AVIVAMENTO</h3>
+            <p>
+                Levar uma mensagem que desperte e fortaleça vidas.
+            </p>
         </div>
 
-    </footer>
+        <div class="card">
+            <h3>❤️ VIDAS</h3>
+            <p>
+                Usar nossos dons para alcançar e transformar vidas.
+            </p>
+        </div>
 
+    </div>
+</section>
 
-    <script src="script.js"></script>
+<section>
+    <h2>UMA PALAVRA DA KADOSH</h2>
+
+    <p>
+        “Não queremos apenas cantar. Queremos ser instrumentos
+        nas mãos de Deus.”
+    </p>
+</section>
+
+<section>
+    <div class="agenda">
+        <h2>📅 AGENDA KADOSH</h2>
+
+        <p>
+            Quer a Banda Kadosh no seu culto, congresso ou evento?
+        </p>
+
+        <p>
+            Entre em contato conosco para consultar nossa agenda
+            e disponibilidade.
+        </p>
+
+        <a
+            class="botao whatsapp"
+            href="https://wa.me/5511924243911"
+            target="_blank">
+            🟢 CHAMAR NO WHATSAPP
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p>BANDA KADOSH</p>
+    <p>Separados para Ele. Tudo para a glória dEle.</p>
+</footer>
 
 </body>
-            </html>
+</html>
