@@ -3,107 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banda Kadosh</title>
+
+    <title>Banda Kadosh | Ministério de Louvor</title>
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: #0b0b0b;
+            background: #080808;
             color: white;
-            line-height: 1.6;
         }
 
         header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.92);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #b30000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #e00000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #e00000;
+        }
+
+        .hero {
             min-height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 30px;
+            padding: 120px 20px 60px;
             background:
-                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85)),
-                radial-gradient(circle at center, #7b0000, #0b0b0b 65%);
+                linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
+                radial-gradient(circle at center, #650000, #080808 65%);
         }
 
         .hero h1 {
-            font-size: 60px;
-            letter-spacing: 8px;
-            color: #d4af37;
-            margin-bottom: 15px;
+            font-size: clamp(45px, 9vw, 90px);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        .hero h1 span {
+            color: #e00000;
         }
 
         .hero p {
-            font-size: 20px;
+            margin: 20px auto;
             max-width: 650px;
-            margin: auto;
+            color: #ddd;
+            font-size: 18px;
+            line-height: 1.6;
         }
 
         .botao {
             display: inline-block;
-            margin-top: 30px;
-            padding: 14px 28px;
-            background: #b00000;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #c90000;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 30px;
             font-weight: bold;
+            transition: .3s;
+        }
+
+        .botao:hover {
+            background: #ff0000;
+            transform: scale(1.05);
         }
 
         section {
-            padding: 70px 20px;
-            max-width: 1000px;
-            margin: auto;
-            text-align: center;
+            padding: 90px 8%;
         }
 
-        h2 {
-            color: #d4af37;
-            font-size: 32px;
-            margin-bottom: 20px;
+        .titulo {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .titulo h2 {
+            font-size: 38px;
+            text-transform: uppercase;
+        }
+
+        .titulo span {
+            color: #e00000;
+        }
+
+        .sobre {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.8;
+            color: #ccc;
+            font-size: 17px;
         }
 
         .cards {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .card {
-            background: #171717;
-            padding: 30px;
-            border-radius: 12px;
-            width: 280px;
-            border: 1px solid #333;
+            background: #111;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 15px;
+            border: 1px solid #2a2a2a;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: #d00000;
         }
 
         .card h3 {
-            color: #d4af37;
-            margin-bottom: 10px;
+            color: #e00000;
+            margin-bottom: 15px;
+            font-size: 23px;
+        }
+
+        .card p {
+            color: #bbb;
+            line-height: 1.6;
         }
 
         .agenda {
-            background: #151515;
-            border-radius: 15px;
-            padding: 40px 20px;
+            background: #0d0d0d;
         }
 
-        .whatsapp {
-            background: #168c3a;
+        .contato {
+            text-align: center;
+            background:
+                linear-gradient(rgba(100,0,0,.25), rgba(0,0,0,.9));
+        }
+
+        .contato h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .contato p {
+            color: #ccc;
+            font-size: 17px;
+            margin-bottom: 10px;
         }
 
         footer {
             text-align: center;
-            padding: 30px;
-            background: #050505;
-            color: #aaa;
+            padding: 30px 20px;
+            background: #030303;
+            color: #777;
+            border-top: 1px solid #222;
+        }
+
+        footer strong {
+            color: #e00000;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 15px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .hero h1 {
+                letter-spacing: 2px;
+            }
         }
     </style>
 </head>
@@ -111,90 +213,128 @@
 <body>
 
 <header>
-    <div class="hero">
-        <h1>BANDA KADOSH</h1>
+    <div class="logo">KADOSH</div>
 
-        <p>
-            Separados para adorar. Chamados para servir.
-        </p>
-
-        <a href="#sobre" class="botao">CONHEÇA A KADOSH</a>
-    </div>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#ministerio">Ministério</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#contato">Contato</a>
+    </nav>
 </header>
 
-<section id="sobre">
-    <h2>QUEM SOMOS</h2>
-
-    <p>
-        A Banda Kadosh nasceu com o propósito de levar a presença de Deus
-        através da música, usando cada voz e cada instrumento para adorar
-        e alcançar vidas.
-    </p>
-</section>
-
-<section>
-    <h2>NOSSO PROPÓSITO</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>🎤 ADORAÇÃO</h3>
-            <p>
-                Adorar a Deus com todo o nosso coração.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🔥 AVIVAMENTO</h3>
-            <p>
-                Levar uma mensagem que desperte e fortaleça vidas.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>❤️ VIDAS</h3>
-            <p>
-                Usar nossos dons para alcançar e transformar vidas.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section>
-    <h2>UMA PALAVRA DA KADOSH</h2>
-
-    <p>
-        “Não queremos apenas cantar. Queremos ser instrumentos
-        nas mãos de Deus.”
-    </p>
-</section>
-
-<section>
-    <div class="agenda">
-        <h2>📅 AGENDA KADOSH</h2>
+<section class="hero" id="inicio">
+    <div>
+        <h1>BANDA <span>KADOSH</span></h1>
 
         <p>
-            Quer a Banda Kadosh no seu culto, congresso ou evento?
+            Um ministério chamado para adorar, servir e levar a presença
+            de Deus através da música.
         </p>
 
-        <p>
-            Entre em contato conosco para consultar nossa agenda
-            e disponibilidade.
-        </p>
-
-        <a
-            class="botao whatsapp"
-            href="https://wa.me/5511924243911"
-            target="_blank">
-            🟢 CHAMAR NO WHATSAPP
+        <a class="botao"
+           href="https://wa.me/5511924243911"
+           target="_blank">
+            CHAMAR A BANDA
         </a>
     </div>
 </section>
 
+<section id="sobre">
+    <div class="titulo">
+        <h2>Sobre a <span>Kadosh</span></h2>
+    </div>
+
+    <div class="sobre">
+        <p>
+            A Banda Kadosh nasceu com o propósito de usar a música
+            como instrumento de adoração e transformação.
+            Nosso desejo é servir a Deus com excelência,
+            levando uma mensagem de fé, esperança e salvação.
+        </p>
+    </div>
+</section>
+
+<section id="ministerio">
+    <div class="titulo">
+        <h2>Nosso <span>Ministério</span></h2>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🎤 Louvor</h3>
+            <p>
+                Ministração de louvor para cultos,
+                congressos e eventos.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🔥 Adoração</h3>
+            <p>
+                Momentos de adoração buscando
+                a presença de Deus.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>⛪ Eventos</h3>
+            <p>
+                Participação em congressos,
+                festividades e programações.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="agenda" id="agenda">
+    <div class="titulo">
+        <h2>Agenda</h2>
+    </div>
+
+    <div class="sobre">
+        <p>
+            Quer levar a Banda Kadosh para sua igreja ou evento?
+        </p>
+
+        <p>
+            Entre em contato conosco para consultar
+            disponibilidade e datas.
+        </p>
+
+        <a class="botao"
+           href="https://wa.me/5511924243911"
+           target="_blank">
+            CONSULTAR AGENDA
+        </a>
+    </div>
+</section>
+
+<section class="contato" id="contato">
+    <div class="titulo">
+        <h2>Entre em <span>Contato</span></h2>
+    </div>
+
+    <p>
+        Quer falar com a Banda Kadosh?
+    </p>
+
+    <p>
+        Estamos prontos para conversar com você.
+    </p>
+
+    <a class="botao"
+       href="https://wa.me/5511924243911"
+       target="_blank">
+        FALAR NO WHATSAPP
+    </a>
+</section>
+
 <footer>
-    <p>BANDA KADOSH</p>
-    <p>Separados para Ele. Tudo para a glória dEle.</p>
+    © 2026 <strong>Banda Kadosh</strong> — Ministério de Louvor
 </footer>
 
 </body>
